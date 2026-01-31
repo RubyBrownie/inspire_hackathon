@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package HobbyProjects;
+
 import java.util.Scanner;
 
 /**
- * @since 2024 
- * @author Patrick A. 
+ * @sinc 
+ * @authors 
  */
-public class GradeComputation {
+public class FoodWasteComputation {
     /**
      * Scanner input used to prompt users to enter doubles in the following methods.
      */   
@@ -109,3 +109,4 @@ return average;
     }//End of main
     
 }//End of class
+
