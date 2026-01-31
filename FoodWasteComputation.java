@@ -1,46 +1,85 @@
-
-package HobbyProjects;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
- * @since 2026
- * @authors 
+ * 31 Jan 2026
+ * Gavin & Patrick
  */
 public class FoodWasteComputation {
-  /**
-  * Scanner input used to prompt users to enter doubles in the following methods.
-  */   
-public static Scanner input = new Scanner(System.in);
-public static ArrayList<Double> Storage = new ArrayList<Double>();
+        /**
+         * Scanner input to prompt users
+         */
+        public static Scanner input = new Scanner(System.in);
 
-//gets the weight of the food as purchased
-public static void getFoodWeight(){
-    System.out.println("Enter the weight of the food: ");
-}
-//sums up the total food waste lost
-public static void computeTotalWaste(){}
+        public static int footTraffic;
+        public static double portionaSize;
+        public static double foodPrepared;
+        public static double foodWasted; // wasted food in kg
+        public static double costPerKg;
+        public static double moneyLost;
 
-//converts the wasted weight into its corresponding price
-public static void convertWeightToPrice(){}
+        //gets the weight of the food as purchased
+        public static void getFoodWeight(){
 
+            System.out.println("Enter the number of customers: ");
+            footTraffic = input.nextInt();
 
+            System.out.println("Enter the weight of the food in kg per customer: ");
+            portionaSize = input.nextDouble();
 
-
-
-//MAYBE HAVE A WHILE LOOP SO WE CAN HAVE A PROGRAM THAT ALLOWS US TO ADD MORE FOOD ITEMS IN IT
-public static void main(String[] args){
-    
-    while(true){
-        
-        getFoodWeight();
-        computeTotalWaste();
-        convertWeightToPrice();
-        //arraylist to constantly add costs into it
-        Storage.add(0.0);
-        
-    }
+            foodPrepared = footTraffic * portionaSize;
         }
-}
 
- 
+        //sums up the total food waste lost
+        public static void computeTotalWaste(){
+            System.out.println("Enter wasted food amount in kg:");
+            foodWasted = input.nextDouble();
+        }
+
+        //converts the wasted weight into its corresponding price
+        public static void convertWeightToPrice(){
+            System.out.println("Enter cost per kg:");
+            costPerKg = input.nextDouble();
+
+            moneyLost = foodWasted * costPerKg;
+        }
+
+        //for formatting purposes (optional)
+        public static void formatting(){
+            double wastePercent = 0;
+
+            if (foodPrepared > 0) {
+                wastePercent = (foodWasted / foodPrepared) * 100;
+            }
+
+            System.out.println("\n--- Food Waste Report ---");
+
+            System.out.printf("Food prepared: %.2f kg\n", foodPrepared);
+            System.out.printf("Food wasted: %.2f kg\n", foodWasted);
+            System.out.printf("Waste percent: %.1f%%\n", wastePercent);
+            System.out.printf("Money lost: $%.2f\n", moneyLost);
+
+            System.out.println("--------------------------\n");
+
+        }
+
+    public static void main(String[] args){
+        //While loop to add more food items in.
+        while(true){
+            getFoodWeight();
+            computeTotalWaste();
+            convertWeightToPrice();
+            formatting();
+
+            System.out.printf("Add another food item? (y/n): ");
+            String again = input.next();
+
+            if (again.equalsIgnoreCase("n")) {
+                break;
+            }
+            System.out.println();
+        }
+
+        System.out.println("Done.");
+        input.close();
+    }
+}
