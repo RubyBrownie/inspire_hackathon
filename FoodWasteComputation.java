@@ -6,7 +6,7 @@
 import java.util.Scanner;
 
 /**
- * @sinc 
+ * @since 2026
  * @authors 
  */
 public class FoodWasteComputation {
@@ -109,4 +109,5 @@ return average;
     }//End of main
     
 }//End of class
+
 
