@@ -22,7 +22,7 @@ public static void computeTotalWaste(){}
 //converts the wasted weight into its corresponding price
 public static void convertWeightToPrice(){}
 
-//for formatting purposes
+//for formatting purposes (optional)
 public static void formatting(){}
 
 
@@ -41,3 +41,4 @@ public static void main(String[] args){
 }
 
  
+
