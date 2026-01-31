@@ -3,6 +3,9 @@ import java.util.Scanner;
 /**
  * 31 Jan 2026
  * Gavin & Patrick
+ * 
+ * Food Waste Computation, a program where input is calculated to
+ * show the output and how much waste is produced
  */
 public class FoodWasteComputation {
         /**
@@ -10,12 +13,12 @@ public class FoodWasteComputation {
          */
         public static Scanner input = new Scanner(System.in);
 
-        public static int footTraffic;
-        public static double portionaSize;
-        public static double foodPrepared;
+        public static int footTraffic; // number of customers
+        public static double portionaSize; // weight of food per customer
+        public static double foodPrepared; // food prepared in kg
         public static double foodWasted; // wasted food in kg
-        public static double costPerKg;
-        public static double moneyLost;
+        public static double costPerKg; // cost per kg of that food
+        public static double moneyLost; // food lost in money
 
         //gets the weight of the food as purchased
         public static void getFoodWeight(){
@@ -43,7 +46,7 @@ public class FoodWasteComputation {
             moneyLost = foodWasted * costPerKg;
         }
 
-        //for formatting purposes (optional)
+        // output the reports
         public static void formatting(){
             double wastePercent = 0;
 
